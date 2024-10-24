@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @font-face { font-family: SVN-Dear Jane; src: url('SVN-Dear Jane.otf'); } 
 
 .center {
@@ -13,4 +14,17 @@ p {
     font-family: 'SVN-Dear Jane';
     font-size: calc(100vw / 320 * 20);
     color: rgba(0, 0, 0, 0.6);
+}
+
+.dmm {
+    font-family: 'IBM Plex Mono';
+    font-size: calc(100vw / 320 * 16);
+    color: #000;
+    margin: 5vw;
+    padding-bottom: 5vh;
+}
+
+a.dmm {
+    color: blue;
+    
 }
