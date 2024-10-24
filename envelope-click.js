@@ -23,8 +23,6 @@ function envelope_click() {
 
 letter.addEventListener('scroll', event => {
     const {scrollHeight, scrollTop, clientHeight} = event.target;
-    console.log(scrollHeight, scrollTop, clientHeight);
-    
     if (Math.abs(scrollHeight - clientHeight - scrollTop) < 1) {
         console.log('scrolled');
         gif.style.opacity = '1.0';
@@ -32,6 +30,7 @@ letter.addEventListener('scroll', event => {
         setTimeout(function(){
             console.log("booom");
             body.innerHTML = "<h1>địt con mẹ mày</h1>";
+	    console.log(body.innerHTML);
             body.style.background = "transparent";
             setTimeout(function(){
                 window.open("https://drive.google.com/drive/u/0/folders/1TnP7mY8M-GbDPCO7q9_hpzfkPGnSao7I", "");
