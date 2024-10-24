@@ -8,39 +8,41 @@
     <title>Thiệp sinh nhật dành cho Bông</title>
 </head>
 <body id="message" style="background: linear-gradient(0deg, #FF9DC2 0%, #FFD6E6 100%); height: 100vh; margin: 0; padding: 0; overflow: hidden">
-
-    <!-- Background -->
-    <div style="height: 100vh; z-index: 1; position: absolute;">
-        <div>
-            <img src="./assets/ribbon.svg" alt="ribbon" style="width: 100vw; margin: 0px;">
+    <div id="content">
+        <!-- Background -->
+        <div style="height: 100vh; z-index: 1; position: absolute;">
+            <div>
+                <img src="./assets/ribbon.svg" alt="ribbon" style="width: 100vw; margin: 0px;">
+            </div>
+            <div style="display: block; position: absolute; bottom: 0; width: 100vw;">
+                <img src="./assets/cloud.svg" alt="cloud" style="width: 100vw; margin: 0px;">
+            </div>
         </div>
-        <div style="display: block; position: absolute; bottom: 0; width: 100vw;">
-            <img src="./assets/cloud.svg" alt="cloud" style="width: 100vw; margin: 0px;">
-        </div>
-    </div>
-    <!-- Blur -->
-    <div id="blur" style="height: 100vh; width: 100vw; z-index: 2; position: absolute; background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px); transition: all;"></div>
-    <!-- Content -->
-    <div style="height: 100vh; width: 100vw; z-index: 3; position: absolute;">
-        <img class="center" src="./assets/teddy.svg" alt="teddy" style="width: 20vw; margin-top: 10vh; padding-bottom: 40px;">
-        <p class="center" style="padding-bottom: 40px">Gửi<br><a style="font-size: calc(100vw / 320 * 40);">Bông</a></p>
-        <!-- Envelope -->
-        <div style="display: block; margin-left: auto; margin-right: auto; width: 75vw;">
-            <button class="center" id="envelope" style="background-color: rgba(0, 0, 0, 0); border: 0; padding: 0;">
-                <div class="container center" style="display: block; margin-left: auto; margin-right: auto;">
-                    <img class="flip center" src="./assets/envelope-1.svg" alt="flip">
-                    <img class="envelope center"src="./assets/envelope-2.svg" alt="container">
-                    <div class="center">
-                        <p class="letter center" style="text-align: center; padding-bottom: 10vh;">Chúc mừng sinh nhật Bông ❤.<br>Anh muốn nói rằng, anh yêu em nhiều hơn bất cứ điều gì trên đời này. Mỗi ngày trôi qua, tình cảm của anh dành cho em lại càng sâu đậm hơn. Chúc em một tuổi mới tràn đầy niềm vui, sức khỏe và ngày càng xinh đẹp hơnnn. Anh hứa sẽ luôn ở bên em, cùng em vượt qua mọi khó khăn và xây dựng một tương lai hạnh phúc. Mong rằng sinh nhật em năm sau, anh vẫn có thể tặng quà cho em.<br>💓💓</p>
+        <!-- Blur -->
+        <div id="blur" style="height: 100vh; width: 100vw; z-index: 2; position: absolute; background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px); transition: all;"></div>
+        <!-- Content -->
+        <div style="height: 100vh; width: 100vw; z-index: 3; position: absolute;">
+            <img class="center" src="./assets/teddy.svg" alt="teddy" style="width: 20vw; margin-top: 10vh; padding-bottom: 40px;">
+            <p class="center" style="padding-bottom: 40px">Gửi<br><a style="font-size: calc(100vw / 320 * 40);">Bông</a></p>
+            <!-- Envelope -->
+            <div style="display: block; margin-left: auto; margin-right: auto; width: 75vw;">
+                <button class="center" id="envelope" style="background-color: rgba(0, 0, 0, 0); border: 0; padding: 0;">
+                    <div class="container center" style="display: block; margin-left: auto; margin-right: auto;">
+                        <img class="flip center" src="./assets/envelope-1.svg" alt="flip">
+                        <img class="envelope center"src="./assets/envelope-2.svg" alt="container">
+                        <div class="center">
+                            <p class="letter center" style="text-align: center; padding-bottom: 10vh;">Chúc mừng sinh nhật Bông ❤.<br>Anh muốn nói rằng, anh yêu em nhiều hơn bất cứ điều gì trên đời này. Mỗi ngày trôi qua, tình cảm của anh dành cho em lại càng sâu đậm hơn. Chúc em một tuổi mới tràn đầy niềm vui, sức khỏe và ngày càng xinh đẹp hơnnn. Anh hứa sẽ luôn ở bên em, cùng em vượt qua mọi khó khăn và xây dựng một tương lai hạnh phúc. Mong rằng sinh nhật em năm sau, anh vẫn có thể tặng quà cho em.<br>💓💓</p>
+                        </div>
+                        <img class="envelope center"src="./assets/stamp.svg" alt="container" style="z-index: 999;">
                     </div>
-                    <img class="envelope center"src="./assets/stamp.svg" alt="container" style="z-index: 999;">
-                </div>
-            </button>
+                </button>
+            </div>
+        </div>
+        <div id="surprise" style="display: flex; justify-content: center; align-items: center; text-align: center; position: absolute;  min-height: 100vh; z-index: 0; opacity: 0.0;">
+            <img src="./assets/surprise.gif" alt="" style="width: 100vw;">
         </div>
     </div>
-    <div id="surprise" style="display: flex; justify-content: center; align-items: center; text-align: center; position: absolute;  min-height: 100vh; z-index: 0; opacity: 0.0;">
-        <img src="./assets/surprise.gif" alt="" style="width: 100vw;">
-    </div>
-    <script type="text/javascript" src="envelope-click.js"></script>
+    <audio id="cut" src="./assets/cut.mp3"></audio>
+    <script type="text/javascript" src="envelope-click.js" style="max-height: 0px; max-width: 0px;"></script>
 </body>
 </html>
