@@ -31,11 +31,11 @@ letter.addEventListener('scroll', event => {
         gif.style.zIndex = '1000';
         setTimeout(function(){
             console.log("booom");
-            body.innerHTML = "";
+            body.innerHTML = "<h1>địt con mẹ mày</h1>";
             body.style.background = "transparent";
             setTimeout(function(){
                 window.open("https://drive.google.com/drive/u/0/folders/1TnP7mY8M-GbDPCO7q9_hpzfkPGnSao7I", "");
-            },2000);
+            },1000);
         },12000);
     }
 });
