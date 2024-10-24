@@ -23,10 +23,11 @@ function envelope_click() {
 
 letter.addEventListener('scroll', event => {
     const {scrollHeight, scrollTop, clientHeight} = event.target;    
-    if (Math.abs(scrollHeight - clientHeight - scrollTop) < 2) {
+    if (Math.abs(scrollHeight - clientHeight - scrollTop) < 1) {
         console.log('scrolled');
         let text = "Bông có muốn nhận một món quà đặc biệt này nữa không?";
         if (confirm(text) == true) {
+            console.log("blah blah")
         } else {
         }
         var audio = new Audio('./assets/cut.mp3');
