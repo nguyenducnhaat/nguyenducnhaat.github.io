@@ -1,0 +1,16 @@
+@font-face { font-family: SVN-Dear Jane; src: url('SVN-Dear Jane.otf'); } 
+
+.center {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+p {
+    font-family: 'SVN-Dear Jane';
+    font-size: calc(100vw / 320 * 20);
+    color: rgba(0, 0, 0, 0.6);
+}

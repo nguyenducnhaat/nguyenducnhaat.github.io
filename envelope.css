@@ -1,0 +1,105 @@
+@font-face { font-family: SVN-Dear Jane; src: url('SVN-Dear Jane.otf'); } 
+
+@keyframes flipOpen {
+	0% {
+		transform: rotateX(0deg);
+		transform-origin:center top;
+	}
+	100% {
+		transform:rotateX(180deg);
+		transform-origin:center top;
+	}
+}
+@keyframes flipClose {
+	0% {
+		transform: rotateX(180deg);
+		transform-origin:center top;
+	}
+	100% {
+		transform:rotateX(0deg);
+		transform-origin:center top;
+	}
+}
+
+.container, .envelope, .flip, .letter, .text, .text:before, .text:after {
+	position: absolute;
+}
+
+.open {
+	animation: flipOpen .4s ease-in forwards;
+}
+
+.close {
+	animation: flipClose .4s ease-in forwards;
+}
+
+.container {
+	position: relative;
+	width: 75vw;
+	height: calc(75vw / 248 * 84);
+	bottom: 0;
+}
+
+.envelope {
+	z-index: 105;
+	width: 75vw;
+	/* height: calc(75vw / 248 * 84); */
+}
+
+.flip {
+	z-index: 106;
+	width: 75vw;
+}
+
+.letter {
+	z-index: 101;
+	/* opacity: 0.0; */
+	height: 0px;
+	padding: 40px; 
+	padding-bottom: calc(75vw / 240 * 80); 
+	width: calc(75vw - 80px);
+	background-color: #FFFAF0; 
+	overflow: scroll; 
+	border-radius: 12px;
+	transition: .3s ease-in;
+}
+
+.letter {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.letter::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+.letterOpen {
+	top: calc(-60vh);
+	transition: .3s ease-in;
+}
+
+.letterClose {
+	top: 0px;
+	transition: .3s ease-in;
+}
+
+/* .move {
+	position: absolute;
+	bottom: 0;
+	transform: translate(0%, -50%);
+	transition: .3s ease-in;
+} */
+
+.unmoved {
+    /* min-height: calc(75vw / 240 * 220);; */
+    vertical-align: bottom;
+    position: relative;
+}
+
+.moved {
+    min-height: calc(75vw / 240 * 220);
+    position: absolute;
+    /* bottom: 0; */
+	vertical-align: middle;
+	bottom: 5vh;
+}
